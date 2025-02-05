@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'switch'
+Slack : -31.558
+TNS   : -91.484
+
+Type  : Slow 1200mV 85C Model Setup 'P11'
+Slack : -3.078
+TNS   : -137.431
+
+Type  : Slow 1200mV 85C Model Hold 'switch'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'P11'
+Slack : 0.378
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'switch'
+Slack : -33.345
+TNS   : -791.359
+
+Type  : Slow 1200mV 85C Model Removal 'switch'
+Slack : 4.186
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'P11'
+Slack : -3.000
+TNS   : -92.792
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'switch'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Slow 1200mV 0C Model Setup 'switch'
+Slack : -28.645
+TNS   : -81.747
+
+Type  : Slow 1200mV 0C Model Setup 'P11'
+Slack : -2.684
+TNS   : -118.141
+
+Type  : Slow 1200mV 0C Model Hold 'switch'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'P11'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'switch'
+Slack : -30.223
+TNS   : -716.872
+
+Type  : Slow 1200mV 0C Model Removal 'switch'
+Slack : 3.908
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'P11'
+Slack : -3.000
+TNS   : -92.792
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'switch'
+Slack : -3.000
+TNS   : -39.478
+
+Type  : Fast 1200mV 0C Model Setup 'switch'
+Slack : -11.987
+TNS   : -25.177
+
+Type  : Fast 1200mV 0C Model Setup 'P11'
+Slack : -0.726
+TNS   : -19.748
+
+Type  : Fast 1200mV 0C Model Hold 'switch'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'P11'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'switch'
+Slack : -12.815
+TNS   : -303.524
+
+Type  : Fast 1200mV 0C Model Removal 'switch'
+Slack : 1.685
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'P11'
+Slack : -3.000
+TNS   : -69.497
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'switch'
+Slack : -3.000
+TNS   : -39.088
+
+------------------------------------------------------------

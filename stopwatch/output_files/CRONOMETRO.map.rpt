@@ -1,0 +1,835 @@
+Analysis & Synthesis report for CRONOMETRO
+Tue Feb 04 22:58:40 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Mod1
+ 12. Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Div1
+ 14. Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: contador_segundos_BCD:inst1|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: contador_segundos_BCD:inst1|lpm_divide:Div0
+ 17. Parameter Settings for Inferred Entity Instance: reset_global:inst_reset|lpm_mult:Mult0
+ 18. lpm_mult Parameter Settings by Entity Instance
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Feb 04 22:58:40 2025       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; CRONOMETRO                                  ;
+; Top-level Entity Name              ; CRONOMETRO                                  ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 670                                         ;
+;     Total combinational functions  ; 669                                         ;
+;     Dedicated logic registers      ; 90                                          ;
+; Total registers                    ; 90                                          ;
+; Total pins                         ; 47                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; CRONOMETRO         ; CRONOMETRO         ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------------+---------+
+; CRONOMETRO.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/mclya/digital_projects/LAB04/CRONOMETRO.bdf                       ;         ;
+; reset_global.vhd                 ; yes             ; User VHDL File                           ; C:/Users/mclya/digital_projects/LAB04/reset_global.vhd                     ;         ;
+; pause_global.vhd                 ; yes             ; User VHDL File                           ; C:/Users/mclya/digital_projects/LAB04/pause_global.vhd                     ;         ;
+; contador_segundos_BCD.vhd        ; yes             ; User VHDL File                           ; C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd            ;         ;
+; contador_ms_BCD.vhd              ; yes             ; User VHDL File                           ; C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd                  ;         ;
+; contador_minutos_BCD.vhd         ; yes             ; User VHDL File                           ; C:/Users/mclya/digital_projects/LAB04/contador_minutos_BCD.vhd             ;         ;
+; frequence.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/frequence.bdf                        ;         ;
+; timing_reference50k.vhd          ; yes             ; Auto-Found VHDL File                     ; C:/Users/mclya/digital_projects/LAB04/timing_reference50k.vhd              ;         ;
+; timing_reference1k.vhd           ; yes             ; Auto-Found VHDL File                     ; C:/Users/mclya/digital_projects/LAB04/timing_reference1k.vhd               ;         ;
+; conversor.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/conversor.bdf                        ;         ;
+; segmento_a.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_a.bdf                       ;         ;
+; segmento_b.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_b.bdf                       ;         ;
+; segmento_c.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_c.bdf                       ;         ;
+; segmento_d.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_d.bdf                       ;         ;
+; segmento_e.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_e.bdf                       ;         ;
+; segmento_f.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_f.bdf                       ;         ;
+; segmento_g.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/mclya/digital_projects/LAB04/segmento_g.bdf                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; db/lpm_divide_2nl.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_2nl.tdf                ;         ;
+; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_1nh.tdf           ;         ;
+; db/alt_u_div_cke.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_cke.tdf                 ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/add_sub_t3c.tdf                   ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/add_sub_u3c.tdf                   ;         ;
+; db/lpm_divide_itl.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_itl.tdf                ;         ;
+; db/sign_div_unsign_klh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_klh.tdf           ;         ;
+; db/alt_u_div_ihe.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_ihe.tdf                 ;         ;
+; db/lpm_divide_ltl.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_ltl.tdf                ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_nlh.tdf           ;         ;
+; db/alt_u_div_ohe.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_ohe.tdf                 ;         ;
+; db/lpm_divide_ckl.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_ckl.tdf                ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_bkh.tdf           ;         ;
+; db/alt_u_div_0fe.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_0fe.tdf                 ;         ;
+; db/lpm_divide_7sl.tdf            ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_7sl.tdf                ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_9kh.tdf           ;         ;
+; db/alt_u_div_see.tdf             ; yes             ; Auto-Generated Megafunction              ; C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_see.tdf                 ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.tdf        ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/csa_add.inc         ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/mpar_add.inc        ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/muleabz.inc         ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/mul_lfrg.inc        ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/mul_boothc.inc      ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult.inc    ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc  ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/dffpipe.inc         ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf        ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.tdf        ;         ;
++----------------------------------+-----------------+------------------------------------------+----------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 670       ;
+;                                             ;           ;
+; Total combinational functions               ; 669       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 173       ;
+;     -- 3 input functions                    ; 159       ;
+;     -- <=2 input functions                  ; 337       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 429       ;
+;     -- arithmetic mode                      ; 240       ;
+;                                             ;           ;
+; Total registers                             ; 90        ;
+;     -- Dedicated logic registers            ; 90        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 47        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; P11~input ;
+; Maximum fan-out                             ; 64        ;
+; Total fan-out                               ; 2091      ;
+; Average fan-out                             ; 2.45      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                             ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                     ; Entity Name           ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |CRONOMETRO                               ; 669 (0)             ; 90 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 47   ; 0            ; 0          ; |CRONOMETRO                                                                                                                             ; CRONOMETRO            ; work         ;
+;    |contador_minutos_BCD:inst3|           ; 6 (6)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_minutos_BCD:inst3                                                                                                  ; contador_minutos_BCD  ; work         ;
+;    |contador_ms_BCD:inst2|                ; 385 (19)            ; 11 (11)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2                                                                                                       ; contador_ms_BCD       ; work         ;
+;       |lpm_divide:Div0|                   ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div0                                                                                       ; lpm_divide            ; work         ;
+;          |lpm_divide_ltl:auto_generated|  ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div0|lpm_divide_ltl:auto_generated                                                         ; lpm_divide_ltl        ; work         ;
+;             |sign_div_unsign_nlh:divider| ; 69 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div0|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider                             ; sign_div_unsign_nlh   ; work         ;
+;                |alt_u_div_ohe:divider|    ; 69 (69)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div0|lpm_divide_ltl:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_ohe:divider       ; alt_u_div_ohe         ; work         ;
+;       |lpm_divide:Div1|                   ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div1                                                                                       ; lpm_divide            ; work         ;
+;          |lpm_divide_itl:auto_generated|  ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div1|lpm_divide_itl:auto_generated                                                         ; lpm_divide_itl        ; work         ;
+;             |sign_div_unsign_klh:divider| ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div1|lpm_divide_itl:auto_generated|sign_div_unsign_klh:divider                             ; sign_div_unsign_klh   ; work         ;
+;                |alt_u_div_ihe:divider|    ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Div1|lpm_divide_itl:auto_generated|sign_div_unsign_klh:divider|alt_u_div_ihe:divider       ; alt_u_div_ihe         ; work         ;
+;       |lpm_divide:Mod0|                   ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod0                                                                                       ; lpm_divide            ; work         ;
+;          |lpm_divide_2nl:auto_generated|  ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod0|lpm_divide_2nl:auto_generated                                                         ; lpm_divide_2nl        ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider                             ; sign_div_unsign_1nh   ; work         ;
+;                |alt_u_div_cke:divider|    ; 85 (85)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod0|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider       ; alt_u_div_cke         ; work         ;
+;       |lpm_divide:Mod1|                   ; 130 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod1                                                                                       ; lpm_divide            ; work         ;
+;          |lpm_divide_2nl:auto_generated|  ; 130 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod1|lpm_divide_2nl:auto_generated                                                         ; lpm_divide_2nl        ; work         ;
+;             |sign_div_unsign_1nh:divider| ; 130 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod1|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider                             ; sign_div_unsign_1nh   ; work         ;
+;                |alt_u_div_cke:divider|    ; 130 (130)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_ms_BCD:inst2|lpm_divide:Mod1|lpm_divide_2nl:auto_generated|sign_div_unsign_1nh:divider|alt_u_div_cke:divider       ; alt_u_div_cke         ; work         ;
+;    |contador_segundos_BCD:inst1|          ; 79 (13)             ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1                                                                                                 ; contador_segundos_BCD ; work         ;
+;       |lpm_divide:Div0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Div0                                                                                 ; lpm_divide            ; work         ;
+;          |lpm_divide_7sl:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Div0|lpm_divide_7sl:auto_generated                                                   ; lpm_divide_7sl        ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Div0|lpm_divide_7sl:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh   ; work         ;
+;                |alt_u_div_see:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Div0|lpm_divide_7sl:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_see:divider ; alt_u_div_see         ; work         ;
+;       |lpm_divide:Mod0|                   ; 36 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Mod0                                                                                 ; lpm_divide            ; work         ;
+;          |lpm_divide_ckl:auto_generated|  ; 36 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Mod0|lpm_divide_ckl:auto_generated                                                   ; lpm_divide_ckl        ; work         ;
+;             |sign_div_unsign_bkh:divider| ; 36 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Mod0|lpm_divide_ckl:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh   ; work         ;
+;                |alt_u_div_0fe:divider|    ; 36 (36)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|contador_segundos_BCD:inst1|lpm_divide:Mod0|lpm_divide_ckl:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_0fe:divider ; alt_u_div_0fe         ; work         ;
+;    |conversor:HEX0|                       ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0                                                                                                              ; conversor             ; work         ;
+;       |segmento_a:inst|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_a:inst                                                                                              ; segmento_a            ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX0|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |conversor:HEX1|                       ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1                                                                                                              ; conversor             ; work         ;
+;       |segmento_a:inst|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_a:inst                                                                                              ; segmento_a            ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX1|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |conversor:HEX2|                       ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2                                                                                                              ; conversor             ; work         ;
+;       |segmento_a:inst|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_a:inst                                                                                              ; segmento_a            ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX2|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |conversor:HEX3|                       ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3                                                                                                              ; conversor             ; work         ;
+;       |segmento_a:inst|                   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_a:inst                                                                                              ; segmento_a            ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX3|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |conversor:HEX4|                       ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4                                                                                                              ; conversor             ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX4|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |conversor:HEX5|                       ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5                                                                                                              ; conversor             ; work         ;
+;       |segmento_a:inst|                   ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_a:inst                                                                                              ; segmento_a            ; work         ;
+;       |segmento_b:inst2|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_b:inst2                                                                                             ; segmento_b            ; work         ;
+;       |segmento_c:inst4|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_c:inst4                                                                                             ; segmento_c            ; work         ;
+;       |segmento_d:inst5|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_d:inst5                                                                                             ; segmento_d            ; work         ;
+;       |segmento_e:inst7|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_e:inst7                                                                                             ; segmento_e            ; work         ;
+;       |segmento_f:inst8|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_f:inst8                                                                                             ; segmento_f            ; work         ;
+;       |segmento_g:inst9|                  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|conversor:HEX5|segmento_g:inst9                                                                                             ; segmento_g            ; work         ;
+;    |frequence:FREQQ|                      ; 100 (1)             ; 64 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|frequence:FREQQ                                                                                                             ; frequence             ; work         ;
+;       |Timing_Reference1k:inst|           ; 48 (48)             ; 31 (31)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|frequence:FREQQ|Timing_Reference1k:inst                                                                                     ; Timing_Reference1k    ; work         ;
+;       |Timing_Reference50k:TR50|          ; 51 (51)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|frequence:FREQQ|Timing_Reference50k:TR50                                                                                    ; Timing_Reference50k   ; work         ;
+;    |pause_global:inst6|                   ; 9 (9)               ; 2 (2)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|pause_global:inst6                                                                                                          ; pause_global          ; work         ;
+;    |reset_global:inst_reset|              ; 44 (38)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|reset_global:inst_reset                                                                                                     ; reset_global          ; work         ;
+;       |lpm_mult:Mult0|                    ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|reset_global:inst_reset|lpm_mult:Mult0                                                                                      ; lpm_mult              ; work         ;
+;          |multcore:mult_core|             ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |CRONOMETRO|reset_global:inst_reset|lpm_mult:Mult0|multcore:mult_core                                                                   ; multcore              ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++--------------------------------------------------+---------------------------------------------------------------+
+; Register name                                    ; Reason for Removal                                            ;
++--------------------------------------------------+---------------------------------------------------------------+
+; frequence:FREQQ|Timing_Reference1k:inst|count[0] ; Merged with frequence:FREQQ|Timing_Reference50k:TR50|count[0] ;
+; frequence:FREQQ|Timing_Reference1k:inst|count[1] ; Merged with frequence:FREQQ|Timing_Reference50k:TR50|count[1] ;
+; Total Number of Removed Registers = 2            ;                                                               ;
++--------------------------------------------------+---------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 90    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Inverted Register Statistics                                ;
++---------------------------------------------------+---------+
+; Inverted Register                                 ; Fan out ;
++---------------------------------------------------+---------+
+; frequence:FREQQ|Timing_Reference50k:TR50|count[0] ; 3       ;
+; Total number of inverted registers = 1            ;         ;
++---------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Mod1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                      ;
+; LPM_WIDTHD             ; 10             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_2nl ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                      ;
+; LPM_WIDTHD             ; 10             ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_2nl ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Div1 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                      ;
+; LPM_WIDTHD             ; 4              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_itl ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_ms_BCD:inst2|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                                      ;
+; LPM_WIDTHD             ; 7              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_ltl ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_segundos_BCD:inst1|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                               ;
++------------------------+----------------+----------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                            ;
+; LPM_WIDTHD             ; 6              ; Untyped                                            ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                            ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                            ;
+; LPM_PIPELINE           ; 0              ; Untyped                                            ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                            ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                            ;
+; CBXI_PARAMETER         ; lpm_divide_ckl ; Untyped                                            ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                            ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                            ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                     ;
++------------------------+----------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: contador_segundos_BCD:inst1|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                               ;
++------------------------+----------------+----------------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                            ;
+; LPM_WIDTHD             ; 4              ; Untyped                                            ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                            ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                            ;
+; LPM_PIPELINE           ; 0              ; Untyped                                            ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                            ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                            ;
+; CBXI_PARAMETER         ; lpm_divide_7sl ; Untyped                                            ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                            ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                            ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                     ;
++------------------------+----------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: reset_global:inst_reset|lpm_mult:Mult0 ;
++------------------------------------------------+----------+-----------------------------+
+; Parameter Name                                 ; Value    ; Type                        ;
++------------------------------------------------+----------+-----------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE              ;
+; LPM_WIDTHA                                     ; 4        ; Untyped                     ;
+; LPM_WIDTHB                                     ; 7        ; Untyped                     ;
+; LPM_WIDTHP                                     ; 11       ; Untyped                     ;
+; LPM_WIDTHR                                     ; 11       ; Untyped                     ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                     ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                     ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                     ;
+; LATENCY                                        ; 0        ; Untyped                     ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                     ;
+; INPUT_B_IS_CONSTANT                            ; YES      ; Untyped                     ;
+; USE_EAB                                        ; OFF      ; Untyped                     ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped                     ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                     ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                     ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                     ;
++------------------------------------------------+----------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                 ;
++---------------------------------------+----------------------------------------+
+; Name                                  ; Value                                  ;
++---------------------------------------+----------------------------------------+
+; Number of entity instances            ; 1                                      ;
+; Entity Instance                       ; reset_global:inst_reset|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 4                                      ;
+;     -- LPM_WIDTHB                     ; 7                                      ;
+;     -- LPM_WIDTHP                     ; 11                                     ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                               ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                     ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                    ;
+;     -- USE_EAB                        ; OFF                                    ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                     ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                     ;
++---------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 47                          ;
+; cycloneiii_ff         ; 90                          ;
+;     CLR               ; 3                           ;
+;     ENA CLR           ; 21                          ;
+;     plain             ; 66                          ;
+; cycloneiii_lcell_comb ; 669                         ;
+;     arith             ; 240                         ;
+;         2 data inputs ; 103                         ;
+;         3 data inputs ; 137                         ;
+;     normal            ; 429                         ;
+;         0 data inputs ; 29                          ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 196                         ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 173                         ;
+;                       ;                             ;
+; Max LUT depth         ; 33.50                       ;
+; Average LUT depth     ; 17.54                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Feb 04 22:58:27 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CRONOMETRO -c CRONOMETRO
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file cronometro.bdf
+    Info (12023): Found entity 1: CRONOMETRO
+Info (12021): Found 2 design units, including 1 entities, in source file divisor_frequencia.vhd
+    Info (12022): Found design unit 1: divisor_frequencia-Behavioral File: C:/Users/mclya/digital_projects/LAB04/divisor_frequencia.vhd Line: 33
+    Info (12023): Found entity 1: divisor_frequencia File: C:/Users/mclya/digital_projects/LAB04/divisor_frequencia.vhd Line: 25
+Warning (12019): Can't analyze file -- file contador_ms.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file timing_reference.vhd
+    Info (12022): Found design unit 1: Timing_Reference-freq_div File: C:/Users/mclya/digital_projects/LAB04/Timing_Reference.vhd Line: 12
+    Info (12023): Found entity 1: Timing_Reference File: C:/Users/mclya/digital_projects/LAB04/Timing_Reference.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_segundos.vhd
+    Info (12022): Found design unit 1: contador_segundos-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_segundos.vhd Line: 17
+    Info (12023): Found entity 1: contador_segundos File: C:/Users/mclya/digital_projects/LAB04/contador_segundos.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_ms_ajustado.vhd
+    Info (12022): Found design unit 1: contador_ms_ajustado-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_ms_ajustado.vhd Line: 15
+    Info (12023): Found entity 1: contador_ms_ajustado File: C:/Users/mclya/digital_projects/LAB04/contador_ms_ajustado.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file conversor_clock_100khz.vhd
+    Info (12022): Found design unit 1: conversor_clock_100khz-freq_div File: C:/Users/mclya/digital_projects/LAB04/conversor_clock_100khz.vhd Line: 12
+    Info (12023): Found entity 1: conversor_clock_100khz File: C:/Users/mclya/digital_projects/LAB04/conversor_clock_100khz.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_minutos.vhd
+    Info (12022): Found design unit 1: contador_minutos-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_minutos.vhd Line: 17
+    Info (12023): Found entity 1: contador_minutos File: C:/Users/mclya/digital_projects/LAB04/contador_minutos.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file reset_global.vhd
+    Info (12022): Found design unit 1: reset_global-Behavioral File: C:/Users/mclya/digital_projects/LAB04/reset_global.vhd Line: 16
+    Info (12023): Found entity 1: reset_global File: C:/Users/mclya/digital_projects/LAB04/reset_global.vhd Line: 5
+Warning (12019): Can't analyze file -- file teste_tb_reset_global.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file pause_global.vhd
+    Info (12022): Found design unit 1: pause_global-Behavioral File: C:/Users/mclya/digital_projects/LAB04/pause_global.vhd Line: 16
+    Info (12023): Found entity 1: pause_global File: C:/Users/mclya/digital_projects/LAB04/pause_global.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_minutos_2.vhd
+    Info (12022): Found design unit 1: contador_minutos_2-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_minutos_2.vhd Line: 17
+    Info (12023): Found entity 1: contador_minutos_2 File: C:/Users/mclya/digital_projects/LAB04/contador_minutos_2.vhd Line: 5
+Warning (12019): Can't analyze file -- file output_files/contador_ms_menos_significativo.vhd is missing
+Warning (12019): Can't analyze file -- file contador_ms_0.vhd is missing
+Warning (12019): Can't analyze file -- file contador_ms_1.vhd is missing
+Warning (12019): Can't analyze file -- file output_files/contador_ms_2.vhd is missing
+Warning (12019): Can't analyze file -- file contador_ms_bin.vhd is missing
+Warning (12019): Can't analyze file -- file contador_segundos_decimal.vhd is missing
+Warning (12019): Can't analyze file -- file contador_minutos_decimal.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file contador_segundos_bcd.vhd
+    Info (12022): Found design unit 1: contador_segundos_BCD-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 17
+    Info (12023): Found entity 1: contador_segundos_BCD File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_ms_bcd.vhd
+    Info (12022): Found design unit 1: contador_ms_BCD-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 16
+    Info (12023): Found entity 1: contador_ms_BCD File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file contador_minutos_bcd.vhd
+    Info (12022): Found design unit 1: contador_minutos_BCD-Behavioral File: C:/Users/mclya/digital_projects/LAB04/contador_minutos_BCD.vhd Line: 17
+    Info (12023): Found entity 1: contador_minutos_BCD File: C:/Users/mclya/digital_projects/LAB04/contador_minutos_BCD.vhd Line: 5
+Info (12127): Elaborating entity "CRONOMETRO" for the top level hierarchy
+Info (12128): Elaborating entity "contador_minutos_BCD" for hierarchy "contador_minutos_BCD:inst3"
+Warning (12125): Using design file frequence.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: frequence
+Info (12128): Elaborating entity "frequence" for hierarchy "frequence:FREQQ"
+Warning (12125): Using design file timing_reference50k.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Timing_Reference50k-freq_div File: C:/Users/mclya/digital_projects/LAB04/timing_reference50k.vhd Line: 11
+    Info (12023): Found entity 1: Timing_Reference50k File: C:/Users/mclya/digital_projects/LAB04/timing_reference50k.vhd Line: 5
+Info (12128): Elaborating entity "Timing_Reference50k" for hierarchy "frequence:FREQQ|Timing_Reference50k:TR50"
+Warning (10492): VHDL Process Statement warning at timing_reference50k.vhd(27): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/mclya/digital_projects/LAB04/timing_reference50k.vhd Line: 27
+Warning (12125): Using design file timing_reference1k.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Timing_Reference1k-freq_div File: C:/Users/mclya/digital_projects/LAB04/timing_reference1k.vhd Line: 11
+    Info (12023): Found entity 1: Timing_Reference1k File: C:/Users/mclya/digital_projects/LAB04/timing_reference1k.vhd Line: 5
+Info (12128): Elaborating entity "Timing_Reference1k" for hierarchy "frequence:FREQQ|Timing_Reference1k:inst"
+Warning (10492): VHDL Process Statement warning at timing_reference1k.vhd(27): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/mclya/digital_projects/LAB04/timing_reference1k.vhd Line: 27
+Info (12128): Elaborating entity "reset_global" for hierarchy "reset_global:inst_reset"
+Info (12128): Elaborating entity "contador_ms_BCD" for hierarchy "contador_ms_BCD:inst2"
+Warning (10492): VHDL Process Statement warning at contador_ms_BCD.vhd(31): signal "pause_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 31
+Info (12128): Elaborating entity "pause_global" for hierarchy "pause_global:inst6"
+Info (12128): Elaborating entity "contador_segundos_BCD" for hierarchy "contador_segundos_BCD:inst1"
+Warning (10492): VHDL Process Statement warning at contador_segundos_BCD.vhd(30): signal "pause_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 30
+Warning (12125): Using design file conversor.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: conversor
+Info (12128): Elaborating entity "conversor" for hierarchy "conversor:HEX0"
+Warning (12125): Using design file segmento_a.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_a
+Info (12128): Elaborating entity "segmento_a" for hierarchy "conversor:HEX0|segmento_a:inst"
+Warning (12125): Using design file segmento_b.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_b
+Info (12128): Elaborating entity "segmento_b" for hierarchy "conversor:HEX0|segmento_b:inst2"
+Warning (12125): Using design file segmento_c.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_c
+Info (12128): Elaborating entity "segmento_c" for hierarchy "conversor:HEX0|segmento_c:inst4"
+Warning (12125): Using design file segmento_d.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_d
+Info (12128): Elaborating entity "segmento_d" for hierarchy "conversor:HEX0|segmento_d:inst5"
+Warning (12125): Using design file segmento_e.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_e
+Info (12128): Elaborating entity "segmento_e" for hierarchy "conversor:HEX0|segmento_e:inst7"
+Warning (12125): Using design file segmento_f.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_f
+Info (12128): Elaborating entity "segmento_f" for hierarchy "conversor:HEX0|segmento_f:inst8"
+Warning (12125): Using design file segmento_g.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_g
+Info (12128): Elaborating entity "segmento_g" for hierarchy "conversor:HEX0|segmento_g:inst9"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer frequence:FREQQ|OF~0
+Info (278001): Inferred 7 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_ms_BCD:inst2|Mod1" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 47
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_ms_BCD:inst2|Mod0" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_ms_BCD:inst2|Div1" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_ms_BCD:inst2|Div0" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_segundos_BCD:inst1|Mod0" File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 49
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "contador_segundos_BCD:inst1|Div0" File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 48
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "reset_global:inst_reset|Mult0" File: C:/Users/mclya/digital_projects/LAB04/reset_global.vhd Line: 32
+Info (12130): Elaborated megafunction instantiation "contador_ms_BCD:inst2|lpm_divide:Mod1" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 47
+Info (12133): Instantiated megafunction "contador_ms_BCD:inst2|lpm_divide:Mod1" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 47
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2nl.tdf
+    Info (12023): Found entity 1: lpm_divide_2nl File: C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_2nl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_1nh File: C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_1nh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_cke.tdf
+    Info (12023): Found entity 1: alt_u_div_cke File: C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_cke.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/mclya/digital_projects/LAB04/db/add_sub_t3c.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/mclya/digital_projects/LAB04/db/add_sub_u3c.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "contador_ms_BCD:inst2|lpm_divide:Mod0" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+Info (12133): Instantiated megafunction "contador_ms_BCD:inst2|lpm_divide:Mod0" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "contador_ms_BCD:inst2|lpm_divide:Div1" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+Info (12133): Instantiated megafunction "contador_ms_BCD:inst2|lpm_divide:Div1" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 46
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_itl.tdf
+    Info (12023): Found entity 1: lpm_divide_itl File: C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_itl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_klh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_klh File: C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_klh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ihe.tdf
+    Info (12023): Found entity 1: alt_u_div_ihe File: C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_ihe.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "contador_ms_BCD:inst2|lpm_divide:Div0" File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 45
+Info (12133): Instantiated megafunction "contador_ms_BCD:inst2|lpm_divide:Div0" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_ms_BCD.vhd Line: 45
+    Info (12134): Parameter "LPM_WIDTHN" = "10"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ltl.tdf
+    Info (12023): Found entity 1: lpm_divide_ltl File: C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_ltl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_nlh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ohe.tdf
+    Info (12023): Found entity 1: alt_u_div_ohe File: C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_ohe.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "contador_segundos_BCD:inst1|lpm_divide:Mod0" File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 49
+Info (12133): Instantiated megafunction "contador_segundos_BCD:inst1|lpm_divide:Mod0" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 49
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "6"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ckl.tdf
+    Info (12023): Found entity 1: lpm_divide_ckl File: C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_ckl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0fe.tdf
+    Info (12023): Found entity 1: alt_u_div_0fe File: C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_0fe.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "contador_segundos_BCD:inst1|lpm_divide:Div0" File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 48
+Info (12133): Instantiated megafunction "contador_segundos_BCD:inst1|lpm_divide:Div0" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/contador_segundos_BCD.vhd Line: 48
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_7sl.tdf
+    Info (12023): Found entity 1: lpm_divide_7sl File: C:/Users/mclya/digital_projects/LAB04/db/lpm_divide_7sl.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: C:/Users/mclya/digital_projects/LAB04/db/sign_div_unsign_9kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_see.tdf
+    Info (12023): Found entity 1: alt_u_div_see File: C:/Users/mclya/digital_projects/LAB04/db/alt_u_div_see.tdf Line: 26
+Info (12130): Elaborated megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0" File: C:/Users/mclya/digital_projects/LAB04/reset_global.vhd Line: 32
+Info (12133): Instantiated megafunction "reset_global:inst_reset|lpm_mult:Mult0" with the following parameter: File: C:/Users/mclya/digital_projects/LAB04/reset_global.vhd Line: 32
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "7"
+    Info (12134): Parameter "LPM_WIDTHP" = "11"
+    Info (12134): Parameter "LPM_WIDTHR" = "11"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "reset_global:inst_reset|lpm_mult:Mult0" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 718 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 671 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4822 megabytes
+    Info: Processing ended: Tue Feb 04 22:58:40 2025
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:09
+
+

@@ -1,0 +1,193 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "H00",
+					"strict" : false
+				},
+				{
+					"name" : "H01",
+					"strict" : false
+				},
+				{
+					"name" : "H02",
+					"strict" : false
+				},
+				{
+					"name" : "H03",
+					"strict" : false
+				},
+				{
+					"name" : "H04",
+					"strict" : false
+				},
+				{
+					"name" : "H05",
+					"strict" : false
+				},
+				{
+					"name" : "H06",
+					"strict" : false
+				},
+				{
+					"name" : "H10",
+					"strict" : false
+				},
+				{
+					"name" : "H11",
+					"strict" : false
+				},
+				{
+					"name" : "H12",
+					"strict" : false
+				},
+				{
+					"name" : "H13",
+					"strict" : false
+				},
+				{
+					"name" : "H14",
+					"strict" : false
+				},
+				{
+					"name" : "H15",
+					"strict" : false
+				},
+				{
+					"name" : "H16",
+					"strict" : false
+				},
+				{
+					"name" : "H20",
+					"strict" : false
+				},
+				{
+					"name" : "H21",
+					"strict" : false
+				},
+				{
+					"name" : "H22",
+					"strict" : false
+				},
+				{
+					"name" : "H23",
+					"strict" : false
+				},
+				{
+					"name" : "H24",
+					"strict" : false
+				},
+				{
+					"name" : "H25",
+					"strict" : false
+				},
+				{
+					"name" : "H26",
+					"strict" : false
+				},
+				{
+					"name" : "H30",
+					"strict" : false
+				},
+				{
+					"name" : "H31",
+					"strict" : false
+				},
+				{
+					"name" : "H32",
+					"strict" : false
+				},
+				{
+					"name" : "H33",
+					"strict" : false
+				},
+				{
+					"name" : "H34",
+					"strict" : false
+				},
+				{
+					"name" : "H35",
+					"strict" : false
+				},
+				{
+					"name" : "H36",
+					"strict" : false
+				},
+				{
+					"name" : "H40",
+					"strict" : false
+				},
+				{
+					"name" : "H41",
+					"strict" : false
+				},
+				{
+					"name" : "H42",
+					"strict" : false
+				},
+				{
+					"name" : "H43",
+					"strict" : false
+				},
+				{
+					"name" : "H44",
+					"strict" : false
+				},
+				{
+					"name" : "H45",
+					"strict" : false
+				},
+				{
+					"name" : "H46",
+					"strict" : false
+				},
+				{
+					"name" : "H50",
+					"strict" : false
+				},
+				{
+					"name" : "H51",
+					"strict" : false
+				},
+				{
+					"name" : "H52",
+					"strict" : false
+				},
+				{
+					"name" : "H53",
+					"strict" : false
+				},
+				{
+					"name" : "H54",
+					"strict" : false
+				},
+				{
+					"name" : "H55",
+					"strict" : false
+				},
+				{
+					"name" : "H56",
+					"strict" : false
+				},
+				{
+					"name" : "RESET",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "PAUSE",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

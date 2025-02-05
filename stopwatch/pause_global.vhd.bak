@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity pause_detector is
+    Port (
+        count_ms   : in  std_logic_vector(9 downto 0);  -- Contador de milissegundos
+        count_sec  : in  std_logic_vector(6 downto 0);  -- Contador de segundos (7 bits para 69)
+        count_min  : in  std_logic_vector(3 downto 0);  -- Contador de minutos
+        pause_btn  : in  std_logic;                     -- Botão de pausa (entrada do botão)
+        pause_out  : out std_logic                      -- Sinal de pausa
+    );
+end pause_detector;
+
+architecture Behavioral of pause_detector is
+begin
+    process (count_ms, count_sec, count_min, pause_btn)
+    begin
+        -- Se o botão de pausa for pressionado ou se o valor atingir 4:69:723, a pausa é ativada
+        if (pause_btn = '1') or 
+           (count_min = "0100" and          -- 4 minutos
+            count_sec = "1000101" and       -- 69 segundos
+            count_ms  = "1011010011") then  -- 723 milissegundos
+            pause_out <= '1';  -- Ativa a pausa
+        else
+            pause_out <= '0';  -- Desativa a pausa
+        end if;
+    end process;
+end Behavioral;

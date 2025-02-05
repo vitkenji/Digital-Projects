@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Aseg",
+					"strict" : false
+				},
+				{
+					"name" : "Bseg",
+					"strict" : false
+				},
+				{
+					"name" : "Cseg",
+					"strict" : false
+				},
+				{
+					"name" : "Dseg",
+					"strict" : false
+				},
+				{
+					"name" : "Eseg",
+					"strict" : false
+				},
+				{
+					"name" : "Fseg",
+					"strict" : false
+				},
+				{
+					"name" : "Gseg",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,431 @@
+Analysis & Synthesis report for project
+Mon Feb 03 17:59:42 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Feb 03 17:59:42 2025       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; project                                     ;
+; Top-level Entity Name              ; project                                     ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 139                                         ;
+;     Total combinational functions  ; 139                                         ;
+;     Dedicated logic registers      ; 56                                          ;
+; Total registers                    ; 56                                          ;
+; Total pins                         ; 46                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; project            ; project            ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------+---------+
+; project.bdf                      ; yes             ; User Block Diagram/Schematic File        ; C:/intelFPGA_lite/18.1/repos/project/project.bdf            ;         ;
+; playerclock.bdf                  ; yes             ; User Block Diagram/Schematic File        ; C:/intelFPGA_lite/18.1/repos/project/playerclock.bdf        ;         ;
+; conversor.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/conversor.bdf          ;         ;
+; segmento_a.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_a.bdf         ;         ;
+; segmento_b.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_b.bdf         ;         ;
+; segmento_c.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_c.bdf         ;         ;
+; segmento_d.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_d.bdf         ;         ;
+; segmento_e.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_e.bdf         ;         ;
+; segmento_f.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_f.bdf         ;         ;
+; segmento_g.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/segmento_g.bdf         ;         ;
+; counter.bdf                      ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/counter.bdf            ;         ;
+; somaesub.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/somaesub.bdf           ;         ;
+; soma4bits.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/soma4bits.bdf          ;         ;
+; soma1bit.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/soma1bit.bdf           ;         ;
+; subtrator.bdf                    ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/subtrator.bdf          ;         ;
+; next_clk.bdf                     ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/next_clk.bdf           ;         ;
+; mincounter.bdf                   ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/intelFPGA_lite/18.1/repos/project/mincounter.bdf         ;         ;
+; timing_reference1k.vhd           ; yes             ; Auto-Found VHDL File                     ; C:/intelFPGA_lite/18.1/repos/project/timing_reference1k.vhd ;         ;
++----------------------------------+-----------------+------------------------------------------+-------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 139    ;
+;                                             ;        ;
+; Total combinational functions               ; 139    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 50     ;
+;     -- 3 input functions                    ; 16     ;
+;     -- <=2 input functions                  ; 73     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 108    ;
+;     -- arithmetic mode                      ; 31     ;
+;                                             ;        ;
+; Total registers                             ; 56     ;
+;     -- Dedicated logic registers            ; 56     ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 46     ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; inst10 ;
+; Maximum fan-out                             ; 33     ;
+; Total fan-out                               ; 591    ;
+; Average fan-out                             ; 2.06   ;
++---------------------------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                   ; Entity Name        ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+--------------------+--------------+
+; |project                       ; 139 (10)            ; 56 (1)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 46   ; 0            ; 0          ; |project                                              ; project            ; work         ;
+;    |Timing_Reference1k:hsdgfs| ; 53 (53)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|Timing_Reference1k:hsdgfs                    ; Timing_Reference1k ; work         ;
+;    |conversor:inst1|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_c:inst4|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_c:inst4             ; segmento_c         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst1|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |conversor:inst3|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst3|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |conversor:inst5|           ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_c:inst4|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_c:inst4             ; segmento_c         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst5|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |conversor:inst6|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_c:inst4|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_c:inst4             ; segmento_c         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst6|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |conversor:inst8|           ; 7 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst8|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |conversor:inst9|           ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9                              ; conversor          ; work         ;
+;       |segmento_a:inst|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_a:inst              ; segmento_a         ; work         ;
+;       |segmento_b:inst2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_b:inst2             ; segmento_b         ; work         ;
+;       |segmento_c:inst4|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_c:inst4             ; segmento_c         ; work         ;
+;       |segmento_d:inst5|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_d:inst5             ; segmento_d         ; work         ;
+;       |segmento_e:inst7|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_e:inst7             ; segmento_e         ; work         ;
+;       |segmento_f:inst8|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_f:inst8             ; segmento_f         ; work         ;
+;       |segmento_g:inst9|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|conversor:inst9|segmento_g:inst9             ; segmento_g         ; work         ;
+;    |playerclock:inst2|         ; 16 (0)              ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2                            ; playerclock        ; work         ;
+;       |counter:CO|             ; 6 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2|counter:CO                 ; counter            ; work         ;
+;          |NEXT_CLK:inst|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2|counter:CO|NEXT_CLK:inst   ; NEXT_CLK           ; work         ;
+;       |counter:inst|           ; 5 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2|counter:inst               ; counter            ; work         ;
+;          |NEXT_CLK:inst|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2|counter:inst|NEXT_CLK:inst ; NEXT_CLK           ; work         ;
+;       |minCounter:MCO|         ; 5 (5)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst2|minCounter:MCO             ; minCounter         ; work         ;
+;    |playerclock:inst|          ; 16 (0)              ; 11 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst                             ; playerclock        ; work         ;
+;       |counter:CO|             ; 6 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst|counter:CO                  ; counter            ; work         ;
+;          |NEXT_CLK:inst|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst|counter:CO|NEXT_CLK:inst    ; NEXT_CLK           ; work         ;
+;       |counter:inst|           ; 5 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst|counter:inst                ; counter            ; work         ;
+;          |NEXT_CLK:inst|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst|counter:inst|NEXT_CLK:inst  ; NEXT_CLK           ; work         ;
+;       |minCounter:MCO|         ; 5 (5)               ; 3 (3)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |project|playerclock:inst|minCounter:MCO              ; minCounter         ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 56    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 22    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Timing_Reference1k:hsdgfs|count[0]     ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 46                          ;
+; cycloneiii_ff         ; 56                          ;
+;     CLR               ; 22                          ;
+;     plain             ; 34                          ;
+; cycloneiii_lcell_comb ; 139                         ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 31                          ;
+;     normal            ; 108                         ;
+;         1 data inputs ; 25                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 50                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.30                        ;
+; Average LUT depth     ; 2.61                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Feb 03 17:59:23 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file project.bdf
+    Info (12023): Found entity 1: project
+Info (12021): Found 1 design units, including 1 entities, in source file playerclock.bdf
+    Info (12023): Found entity 1: playerclock
+Info (12127): Elaborating entity "project" for the top level hierarchy
+Warning (12125): Using design file conversor.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: conversor
+Info (12128): Elaborating entity "conversor" for hierarchy "conversor:inst1"
+Warning (12125): Using design file segmento_a.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_a
+Info (12128): Elaborating entity "segmento_a" for hierarchy "conversor:inst1|segmento_a:inst"
+Warning (12125): Using design file segmento_b.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_b
+Info (12128): Elaborating entity "segmento_b" for hierarchy "conversor:inst1|segmento_b:inst2"
+Warning (12125): Using design file segmento_c.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_c
+Info (12128): Elaborating entity "segmento_c" for hierarchy "conversor:inst1|segmento_c:inst4"
+Warning (12125): Using design file segmento_d.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_d
+Info (12128): Elaborating entity "segmento_d" for hierarchy "conversor:inst1|segmento_d:inst5"
+Warning (12125): Using design file segmento_e.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_e
+Info (12128): Elaborating entity "segmento_e" for hierarchy "conversor:inst1|segmento_e:inst7"
+Warning (12125): Using design file segmento_f.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_f
+Info (12128): Elaborating entity "segmento_f" for hierarchy "conversor:inst1|segmento_f:inst8"
+Warning (12125): Using design file segmento_g.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: segmento_g
+Info (12128): Elaborating entity "segmento_g" for hierarchy "conversor:inst1|segmento_g:inst9"
+Info (12128): Elaborating entity "playerclock" for hierarchy "playerclock:inst"
+Warning (12125): Using design file counter.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: counter
+Info (12128): Elaborating entity "counter" for hierarchy "playerclock:inst|counter:CO"
+Warning (12125): Using design file somaesub.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: somaesub
+Info (12128): Elaborating entity "somaesub" for hierarchy "playerclock:inst|counter:CO|somaesub:somsub"
+Warning (12125): Using design file soma4bits.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: soma4bits
+Info (12128): Elaborating entity "soma4bits" for hierarchy "playerclock:inst|counter:CO|somaesub:somsub|soma4bits:inst3"
+Warning (12125): Using design file soma1bit.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: soma1bit
+Info (12128): Elaborating entity "soma1bit" for hierarchy "playerclock:inst|counter:CO|somaesub:somsub|soma4bits:inst3|soma1bit:inst"
+Warning (12125): Using design file subtrator.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: subtrator
+Info (12128): Elaborating entity "subtrator" for hierarchy "playerclock:inst|counter:CO|somaesub:somsub|subtrator:inst4"
+Warning (12125): Using design file next_clk.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: NEXT_CLK
+Info (12128): Elaborating entity "NEXT_CLK" for hierarchy "playerclock:inst|counter:CO|NEXT_CLK:inst"
+Warning (12125): Using design file mincounter.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: minCounter
+Info (12128): Elaborating entity "minCounter" for hierarchy "playerclock:inst|minCounter:MCO"
+Warning (12125): Using design file timing_reference1k.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Timing_Reference1k-freq_div File: C:/intelFPGA_lite/18.1/repos/project/timing_reference1k.vhd Line: 11
+    Info (12023): Found entity 1: Timing_Reference1k File: C:/intelFPGA_lite/18.1/repos/project/timing_reference1k.vhd Line: 5
+Info (12128): Elaborating entity "Timing_Reference1k" for hierarchy "Timing_Reference1k:hsdgfs"
+Warning (10492): VHDL Process Statement warning at timing_reference1k.vhd(27): signal "tmp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/repos/project/timing_reference1k.vhd Line: 27
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 139 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 4797 megabytes
+    Info: Processing ended: Mon Feb 03 17:59:42 2025
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:16
+
+

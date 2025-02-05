@@ -1,0 +1,35 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity contador_ms is
+    port (
+        clk_1kHz     : in std_logic;  -- Clock de 1 kHz
+        reset        : in std_logic;  -- Sinal de reset
+        count_ms     : out std_logic_vector(9 downto 0);  -- Contador de 0 a 999 ms
+        carry_out_ms : out std_logic  -- Sinal de carry para contador de segundos
+    );
+end contador_ms;
+
+architecture Behavioral of contador_ms is
+    signal count_ms_int : std_logic_vector(9 downto 0) := (others => '0'); -- Contador interno de 10 bits (0 a 999 ms)
+begin
+    -- Atualiza a saída count_ms com o valor do contador interno
+    count_ms <= count_ms_int;
+
+    process(clk_1kHz, reset)
+    begin
+        if reset = '1' then
+            count_ms_int <= (others => '0'); -- Zera o contador quando reset é acionado
+            carry_out_ms <= '0'; -- Zera o carry
+        elsif rising_edge(clk_1kHz) then
+            if count_ms_int = "1111100111" then  -- 999 em binário
+                count_ms_int <= (others => '0'); -- Zera o contador de milissegundos
+                carry_out_ms <= '1'; -- Gera o pulso de carry para o contador de segundos
+            else
+                count_ms_int <= std_logic_vector(unsigned(count_ms_int) + 1); -- Incrementa o contador de milissegundos
+                carry_out_ms <= '0'; -- Nenhum pulso gerado
+            end if;
+        end if;
+    end process;
+end Behavioral;

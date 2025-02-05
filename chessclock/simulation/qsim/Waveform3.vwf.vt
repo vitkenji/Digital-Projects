@@ -1,0 +1,117 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/10/2025 19:38:02"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          project
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module project_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CLK;
+reg RESET;
+reg SWITCH;
+// wires                                               
+wire C0;
+wire C1;
+wire C2;
+wire C3;
+wire C4;
+wire C5;
+wire C6;
+wire C7;
+wire C8;
+wire C9;
+wire C10;
+wire D0;
+wire D1;
+wire D2;
+wire D3;
+wire D4;
+wire D5;
+wire D6;
+wire D7;
+wire D8;
+wire D9;
+wire D10;
+
+// assign statements (if any)                          
+project i1 (
+// port map - connection between master ports and signals/registers   
+	.C0(C0),
+	.C1(C1),
+	.C2(C2),
+	.C3(C3),
+	.C4(C4),
+	.C5(C5),
+	.C6(C6),
+	.C7(C7),
+	.C8(C8),
+	.C9(C9),
+	.C10(C10),
+	.CLK(CLK),
+	.D0(D0),
+	.D1(D1),
+	.D2(D2),
+	.D3(D3),
+	.D4(D4),
+	.D5(D5),
+	.D6(D6),
+	.D7(D7),
+	.D8(D8),
+	.D9(D9),
+	.D10(D10),
+	.RESET(RESET),
+	.SWITCH(SWITCH)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// CLK
+always
+begin
+	CLK = 1'b0;
+	CLK = #1000 1'b1;
+	#1000;
+end 
+
+// RESET
+initial
+begin
+	RESET = 1'b0;
+end 
+
+// SWITCH
+initial
+begin
+	SWITCH = 1'b0;
+	SWITCH = #190000 1'b1;
+	SWITCH = #10000 1'b0;
+	SWITCH = #210000 1'b1;
+	SWITCH = #10000 1'b0;
+end 
+endmodule
+

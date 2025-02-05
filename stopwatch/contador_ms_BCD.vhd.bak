@@ -1,0 +1,86 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity contador_ms_bin is
+    port (
+        clk_1kHz     : in std_logic;              -- Clock de 1 kHz
+        reset        : in std_logic;              -- Sinal de reset
+        pause_signal : in std_logic;              -- Sinal de pause
+        
+		  count_ms_bcd : out std_logic_vector(11 downto 0); -- Contador em formato BCD: centenas, dezenas, unidades
+        carry_out_ms : out std_logic              
+    );
+end contador_ms_bin;
+
+architecture Behavioral of contador_ms_bin is
+    signal count_ms_int : integer range 0 to 999 := 0;   
+    
+	 -- Utilizado na conversão para BCD
+	 signal bcd_unidade    : integer range 0 to 9 := 0;     
+    signal bcd_dezena     : integer range 0 to 9 := 0;     
+    signal bcd_centena : integer range 0 to 9 := 0;    
+begin
+
+	 -- Quando há um clock ou sinal de reset essa parte do código é executada
+    process(clk_1kHz, reset)
+    begin
+        if reset = '1' then
+            count_ms_int <= 0;        
+            carry_out_ms <= '0';      
+        
+		  elsif rising_edge(clk_1kHz) and pause_signal = '0' then
+            if count_ms_int = 999 then
+                count_ms_int <= 0;    
+                carry_out_ms <= '1';  
+            else
+                count_ms_int <= count_ms_int + 1; 
+                carry_out_ms <= '0';
+            end if;
+        end if;
+		  
+    end process;
+
+    -- Conversão do valor do contador para BCD
+    process(count_ms_int)
+    begin
+        bcd_centena <= count_ms_int / 100;                 
+        bcd_dezena     <= (count_ms_int mod 100) / 10;        
+        bcd_unidade    <= count_ms_int mod 10;                
+    end process;
+
+    -- Combina os valores BCD individuais em um único vetor de saída
+    count_ms_bcd <= std_logic_vector(to_unsigned(bcd_centena, 4)) &
+                    std_logic_vector(to_unsigned(bcd_dezena, 4)) &
+                    std_logic_vector(to_unsigned(bcd_unidade, 4));
+
+end Behavioral;
+
+
+-- SOLUÇÃO PARA TRANSFORMAR O CONTADOR EM HEXADECIMAL PARA UM CONTADOR DECIMAL
+--
+-- PROBLEMA: Cada display (milissegundos, segundos, minutos) não era tratado separadamente.  
+-- Em vez disso, o conjunto era considerado como um único valor binário completo.  
+-- Isso fazia com que o valor exibido fosse interpretado de forma incorreta,  
+-- pois o binário puro representa o número integral, sem separar os dígitos decimais.  
+--
+-- Exemplo:
+-- O número 49 (decimal) em binário puro é 110001, que equivale a 31 em hexadecimal.
+-- Isso faz com que o valor seja interpretado incorretamente ao exibir no display.
+--
+-- SOLUÇÃO:
+-- Usar o formato BCD (Binary Coded Decimal).
+-- No formato BCD:
+-- - Cada dígito decimal é convertido separadamente em 4 bits binários, permitindo que cada display exiba o valor correto (dezenas e unidades separadas).  
+-- - Exemplo: O número 49 (decimal) será:
+--   - Dígito das dezenas (4) → 0100
+--   - Dígito das unidades (9) → 1001
+--   - Resultado em BCD: 0100_1001
+--
+-- CONVERSÃO:
+-- Para realizar a conversão de binário puro para BCD:
+-- - As dezenas são obtidas pela divisão inteira do valor por 10: "valor / 10".
+-- - As unidades são obtidas pelo resto da divisão por 10: "valor mod 10".
+-- - Os dois valores (dezenas e unidades) são então convertidos para 4 bits
+--   e concatenados para formar o valor BCD final.
+--

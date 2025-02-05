@@ -1,0 +1,51 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity contador_ms_ajustado is
+    port (
+        clk_1kHz     : in std_logic;              -- Clock de 1 kHz
+        reset        : in std_logic;              -- Sinal de reset
+        pause_signal : in std_logic;              -- Sinal de pause
+        count_ms_bcd : out std_logic_vector(11 downto 0); -- Contador em formato BCD: centenas, dezenas, unidades
+        carry_out_ms : out std_logic              -- Sinal de carry para o próximo contador
+    );
+end contador_ms_ajustado;
+
+architecture Behavioral of contador_ms_ajustado is
+    signal count_ms_int : integer range 0 to 999 := 0;   -- Contador interno
+    signal bcd_units    : integer range 0 to 9 := 0;     -- Dígito das unidades
+    signal bcd_tens     : integer range 0 to 9 := 0;     -- Dígito das dezenas
+    signal bcd_hundreds : integer range 0 to 9 := 0;     -- Dígito das centenas
+begin
+
+    process(clk_1kHz, reset)
+    begin
+        if reset = '1' then
+            count_ms_int <= 0;        -- Zera o contador
+            carry_out_ms <= '0';      -- Zera o carry
+        elsif rising_edge(clk_1kHz) and pause_signal = '0' then
+            if count_ms_int = 999 then
+                count_ms_int <= 0;    -- Reinicia o contador
+                carry_out_ms <= '1';  -- Gera carry
+            else
+                count_ms_int <= count_ms_int + 1; -- Incrementa
+                carry_out_ms <= '0';
+            end if;
+        end if;
+    end process;
+
+    -- Conversão do valor do contador para BCD
+    process(count_ms_int)
+    begin
+        bcd_hundreds <= count_ms_int / 100;                 -- Centenas
+        bcd_tens     <= (count_ms_int mod 100) / 10;        -- Dezenas
+        bcd_units    <= count_ms_int mod 10;                -- Unidades
+    end process;
+
+    -- Combina os valores BCD individuais em um único vetor de saída
+    count_ms_bcd <= std_logic_vector(to_unsigned(bcd_hundreds, 4)) &
+                    std_logic_vector(to_unsigned(bcd_tens, 4)) &
+                    std_logic_vector(to_unsigned(bcd_units, 4));
+
+end Behavioral;

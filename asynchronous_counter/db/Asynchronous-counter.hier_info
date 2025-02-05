@@ -1,0 +1,1163 @@
+|Asynchronous-counter
+H51 <= conversor:convh5.b-segment
+PB1 => mux:inst.Sin
+PB1 => mux:inst2.Sin
+PB0 => registradordeslocamento:inst1.CLK
+SW0 => registradordeslocamento:inst1.S0
+SW1 => registradordeslocamento:inst1.S1
+SW2 => registradordeslocamento:inst1.S2
+SW3 => registradordeslocamento:inst1.S3
+SW4 => somaesub:instsoma.cin
+H52 <= conversor:convh5.c-segment
+H53 <= conversor:convh5.d-segment
+H54 <= conversor:convh5.e-segment
+H55 <= conversor:convh5.f-segment
+H56 <= conversor:convh5.g-segment
+H40 <= conversor:convh4.a-segment
+H41 <= conversor:convh4.b-segment
+H42 <= conversor:convh4.c-segment
+H43 <= conversor:convh4.d-segment
+H44 <= conversor:convh4.e-segment
+H45 <= conversor:convh4.f-segment
+H46 <= conversor:convh4.g-segment
+H30 <= conversor:convh3.a-segment
+H31 <= conversor:convh3.b-segment
+H32 <= conversor:convh3.c-segment
+H33 <= conversor:convh3.d-segment
+H34 <= conversor:convh3.e-segment
+H35 <= conversor:convh3.f-segment
+H36 <= conversor:convh3.g-segment
+H20 <= conversor:convh2.a-segment
+H21 <= conversor:convh2.b-segment
+H22 <= conversor:convh2.c-segment
+H23 <= conversor:convh2.d-segment
+H24 <= conversor:convh2.e-segment
+H25 <= conversor:convh2.f-segment
+H26 <= conversor:convh2.g-segment
+H10 <= conversor:convh1.a-segment
+H11 <= conversor:convh1.b-segment
+H12 <= conversor:convh1.c-segment
+H13 <= conversor:convh1.d-segment
+H14 <= conversor:convh1.e-segment
+H15 <= conversor:convh1.f-segment
+H16 <= conversor:convh1.g-segment
+H00 <= conversor:convh0.a-segment
+H01 <= conversor:convh0.b-segment
+H02 <= conversor:convh0.c-segment
+H03 <= conversor:convh0.d-segment
+H04 <= conversor:convh0.e-segment
+H05 <= conversor:convh0.f-segment
+H06 <= conversor:convh0.g-segment
+H50 <= conversor:convh5.a-segment
+
+
+|Asynchronous-counter|conversor:convh5
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh5|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh5|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh5|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh5|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh5|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh5|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh5|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|Asynchronous-counter|mux:inst
+od3 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+B3 => da4.IN0
+Sin => dn.IN0
+Sin => da0.IN1
+Sin => da1.IN1
+Sin => da2.IN1
+Sin => da3.IN1
+A3 => da0.IN0
+od2 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+B2 => da5.IN0
+A2 => da1.IN0
+od1 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+B1 => da6.IN0
+A1 => da2.IN0
+od0 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+B0 => da7.IN0
+A0 => da3.IN0
+
+
+|Asynchronous-counter|registradordeslocamento:inst1
+F0 <= registrador:inst5.B0
+CLK => registrador:inst5.CLOCK
+CLK => registrador:inst4.CLOCK
+CLK => registrador:inst3.CLOCK
+CLK => registrador:inst2.CLOCK
+CLK => registrador:inst1.CLOCK
+CLK => registrador:inst.CLOCK
+S0 => registrador:inst.A0
+S1 => registrador:inst.A1
+S2 => registrador:inst.A2
+S3 => registrador:inst.A3
+F1 <= registrador:inst5.B1
+F2 <= registrador:inst5.B2
+F3 <= registrador:inst5.B3
+E0 <= registrador:inst4.B0
+E1 <= registrador:inst4.B1
+E2 <= registrador:inst4.B2
+E3 <= registrador:inst4.B3
+D0 <= registrador:inst3.B0
+D1 <= registrador:inst3.B1
+C0 <= registrador:inst2.B0
+C1 <= registrador:inst2.B1
+C2 <= registrador:inst2.B2
+C3 <= registrador:inst2.B3
+B0 <= registrador:inst1.B0
+B1 <= registrador:inst1.B1
+B2 <= registrador:inst1.B2
+B3 <= registrador:inst1.B3
+A0 <= registrador:inst.B0
+A1 <= registrador:inst.B1
+A2 <= registrador:inst.B2
+A3 <= registrador:inst.B3
+D2 <= registrador:inst3.B2
+D3 <= registrador:inst3.B3
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst5
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst4
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst3
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst2
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst1
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|registradordeslocamento:inst1|registrador:inst
+B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst4.IN0
+A0 => inst.IN1
+CLOCK => inst.CLK
+CLOCK => inst1.CLK
+CLOCK => inst2.CLK
+CLOCK => inst3.CLK
+B1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst5.IN0
+A1 => inst1.IN1
+B2 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A2 => inst6.IN0
+A2 => inst2.IN1
+B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A3 => inst7.IN0
+A3 => inst3.IN1
+
+
+|Asynchronous-counter|somaesub:instsoma
+s0 <= soma4bits:inst3.S0
+cin => soma4bits:inst3.Cin
+cin => subtrator:inst4.cin
+cin => inst.IN0
+a0 => soma4bits:inst3.A0
+a1 => soma4bits:inst3.A1
+a2 => soma4bits:inst3.A2
+a3 => soma4bits:inst3.A3
+b0 => subtrator:inst4.b0
+b1 => subtrator:inst4.b1
+b2 => subtrator:inst4.b2
+b3 => subtrator:inst4.b3
+s1 <= soma4bits:inst3.S1
+s2 <= soma4bits:inst3.S2
+s3 <= soma4bits:inst3.S3
+s4 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Asynchronous-counter|somaesub:instsoma|soma4bits:inst3
+S0 <= soma1bit:inst.S
+Cin => soma1bit:inst.Cin
+A0 => soma1bit:inst.A
+B0 => soma1bit:inst.B
+S1 <= soma1bit:inst2.S
+A1 => soma1bit:inst2.A
+B1 => soma1bit:inst2.B
+S2 <= soma1bit:inst3.S
+A2 => soma1bit:inst3.A
+B2 => soma1bit:inst3.B
+S3 <= soma1bit:inst5.S
+A3 => soma1bit:inst5.A
+B3 => soma1bit:inst5.B
+Cout <= soma1bit:inst5.Cout
+
+
+|Asynchronous-counter|somaesub:instsoma|soma4bits:inst3|soma1bit:inst
+S <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst6.IN0
+B => inst7.IN1
+A => inst6.IN1
+A => inst7.IN0
+Cin => inst.IN0
+Cout <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Asynchronous-counter|somaesub:instsoma|soma4bits:inst3|soma1bit:inst2
+S <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst6.IN0
+B => inst7.IN1
+A => inst6.IN1
+A => inst7.IN0
+Cin => inst.IN0
+Cout <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Asynchronous-counter|somaesub:instsoma|soma4bits:inst3|soma1bit:inst3
+S <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst6.IN0
+B => inst7.IN1
+A => inst6.IN1
+A => inst7.IN0
+Cin => inst.IN0
+Cout <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Asynchronous-counter|somaesub:instsoma|soma4bits:inst3|soma1bit:inst5
+S <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+B => inst6.IN0
+B => inst7.IN1
+A => inst6.IN1
+A => inst7.IN0
+Cin => inst.IN0
+Cout <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Asynchronous-counter|somaesub:instsoma|subtrator:inst4
+sub0 <= subxor0.DB_MAX_OUTPUT_PORT_TYPE
+b0 => subxor0.IN0
+cin => subxor0.IN1
+cin => subxor1.IN1
+cin => subxor2.IN1
+cin => subxor3.IN1
+sub1 <= subxor1.DB_MAX_OUTPUT_PORT_TYPE
+b1 => subxor1.IN0
+sub2 <= subxor2.DB_MAX_OUTPUT_PORT_TYPE
+b2 => subxor2.IN0
+sub3 <= subxor3.DB_MAX_OUTPUT_PORT_TYPE
+b3 => subxor3.IN0
+
+
+|Asynchronous-counter|conversor:convh4
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh4|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh4|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh4|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh4|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh4|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh4|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh4|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|Asynchronous-counter|mux:inst2
+od3 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+B3 => da4.IN0
+Sin => dn.IN0
+Sin => da0.IN1
+Sin => da1.IN1
+Sin => da2.IN1
+Sin => da3.IN1
+A3 => da0.IN0
+od2 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+B2 => da5.IN0
+A2 => da1.IN0
+od1 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+B1 => da6.IN0
+A1 => da2.IN0
+od0 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+B0 => da7.IN0
+A0 => da3.IN0
+
+
+|Asynchronous-counter|conversor:convh3
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh3|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh3|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh3|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh3|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh3|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh3|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh3|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|Asynchronous-counter|conversor:convh2
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh2|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh2|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh2|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh2|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh2|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh2|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh2|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|Asynchronous-counter|conversor:convh1
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh1|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh1|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh1|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh1|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh1|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh1|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh1|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|Asynchronous-counter|conversor:convh0
+a-segment <= segmento_a:inst.seg-a
+Ain => segmento_a:inst.Aa
+Ain => segmento_b:inst2.Ab
+Ain => segmento_c:inst4.Ac
+Ain => segmento_d:inst5.Ad
+Ain => segmento_e:inst7.Ae
+Ain => segmento_f:inst8.Af
+Ain => segmento_g:inst9.Ag
+Bin => segmento_a:inst.Ba
+Bin => segmento_b:inst2.Bb
+Bin => segmento_c:inst4.Bc
+Bin => segmento_d:inst5.Bd
+Bin => segmento_e:inst7.Be
+Bin => segmento_f:inst8.Bf
+Bin => segmento_g:inst9.Bg
+Cin => segmento_a:inst.Ca
+Cin => segmento_b:inst2.Cb
+Cin => segmento_c:inst4.Cc
+Cin => segmento_d:inst5.Cd
+Cin => segmento_e:inst7.Ce
+Cin => segmento_f:inst8.Cf
+Cin => segmento_g:inst9.Cg
+Din => segmento_a:inst.Da
+Din => segmento_b:inst2.Db
+Din => segmento_c:inst4.Dc
+Din => segmento_d:inst5.Dd
+Din => segmento_e:inst7.De
+Din => segmento_f:inst8.Df
+Din => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|Asynchronous-counter|conversor:convh0|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh0|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh0|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|Asynchronous-counter|conversor:convh0|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|Asynchronous-counter|conversor:convh0|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|Asynchronous-counter|conversor:convh0|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|Asynchronous-counter|conversor:convh0|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+

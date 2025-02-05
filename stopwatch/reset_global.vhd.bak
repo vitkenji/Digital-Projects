@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity reset_global is
+    Port (
+        clk           : in  std_logic;   -- Clock do sistema
+        reset_in      : in  std_logic;   -- Reset externo
+        count_ms      : in  std_logic_vector(9 downto 0); -- Contador de ms
+        count_sec     : in  std_logic_vector(5 downto 0); -- Contador de seg
+        count_min     : in  std_logic_vector(3 downto 0); -- Contador de min
+        reset_out     : out std_logic   -- Reset global
+    );
+end reset_global;
+
+architecture Behavioral of reset_global is
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            -- Detecção do valor máximo 9:59:999
+            if (count_min = "1001" and count_sec = "111011" and count_ms = "1111100111") then
+                reset_out <= '1';  -- Ativa o reset global
+            else
+                reset_out <= reset_in;  -- Mantém reset externo
+            end if;
+        end if;
+    end process;
+end Behavioral;

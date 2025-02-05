@@ -1,0 +1,17 @@
+process(clk_50MHz)
+begin
+    if rising_edge(clk_50MHz) then
+        counter <= counter + 1;
+        if SW0 = '0' then
+            if counter = 24999 then -- Para 1 kHz
+                clk_out <= not clk_out;
+                counter <= 0;
+            end if;
+        else
+            if counter = 20 then -- Ajustável 20-80 kHz
+                clk_out <= not clk_out;
+                counter <= 0;
+            end if;
+        end if;
+    end if;
+end process;

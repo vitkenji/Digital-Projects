@@ -1,0 +1,744 @@
+|sipo-piso-shift-registers
+HEX00 <= conversor:con0.a-segment
+SW7 => PISOregister:inst.D7
+SW6 => PISOregister:inst.D6
+SW5 => PISOregister:inst.D5
+SW4 => PISOregister:inst.D4
+SW3 => PISOregister:inst.D3
+SW2 => PISOregister:inst.D2
+SW1 => PISOregister:inst.D1
+SW0 => PISOregister:inst.D0
+KEY0 => PISOregister:inst.CLK
+KEY1 => PISOregister:inst.SHIFT
+KEY1 => SIPOregister:inst13.CLK
+HEX01 <= conversor:con0.b-segment
+HEX02 <= conversor:con0.c-segment
+HEX03 <= conversor:con0.d-segment
+HEX04 <= conversor:con0.e-segment
+HEX05 <= conversor:con0.f-segment
+HEX06 <= conversor:con0.g-segment
+HEX10 <= conversor:con1.a-segment
+HEX11 <= conversor:con1.b-segment
+HEX12 <= conversor:con1.c-segment
+HEX13 <= conversor:con1.d-segment
+HEX14 <= conversor:con1.e-segment
+HEX15 <= conversor:con1.f-segment
+HEX16 <= conversor:con1.g-segment
+HEX41 <= conversor:con4.b-segment
+HEX42 <= conversor:con4.c-segment
+HEX43 <= conversor:con4.d-segment
+HEX44 <= conversor:con4.e-segment
+HEX45 <= conversor:con4.f-segment
+HEX46 <= conversor:con4.g-segment
+HEX40 <= conversor:con4.a-segment
+HEX50 <= conversor:con5.a-segment
+HEX51 <= conversor:con5.b-segment
+HEX52 <= conversor:con5.c-segment
+HEX53 <= conversor:con5.d-segment
+HEX54 <= conversor:con5.e-segment
+HEX55 <= conversor:con5.f-segment
+HEX56 <= conversor:con5.g-segment
+LED0 <= SIPOregister:inst13.O0
+LED1 <= SIPOregister:inst13.O1
+LED2 <= SIPOregister:inst13.O2
+LED3 <= SIPOregister:inst13.O3
+LED4 <= SIPOregister:inst13.O4
+LED5 <= SIPOregister:inst13.O5
+LED6 <= SIPOregister:inst13.O6
+LED7 <= SIPOregister:inst13.O7
+
+
+|sipo-piso-shift-registers|conversor:con0
+a-segment <= segmento_a:inst.seg-a
+S3 => segmento_a:inst.Aa
+S3 => segmento_b:inst2.Ab
+S3 => segmento_c:inst4.Ac
+S3 => segmento_d:inst5.Ad
+S3 => segmento_e:inst7.Ae
+S3 => segmento_f:inst8.Af
+S3 => segmento_g:inst9.Ag
+S2 => segmento_a:inst.Ba
+S2 => segmento_b:inst2.Bb
+S2 => segmento_c:inst4.Bc
+S2 => segmento_d:inst5.Bd
+S2 => segmento_e:inst7.Be
+S2 => segmento_f:inst8.Bf
+S2 => segmento_g:inst9.Bg
+S1 => segmento_a:inst.Ca
+S1 => segmento_b:inst2.Cb
+S1 => segmento_c:inst4.Cc
+S1 => segmento_d:inst5.Cd
+S1 => segmento_e:inst7.Ce
+S1 => segmento_f:inst8.Cf
+S1 => segmento_g:inst9.Cg
+S0 => segmento_a:inst.Da
+S0 => segmento_b:inst2.Db
+S0 => segmento_c:inst4.Dc
+S0 => segmento_d:inst5.Dd
+S0 => segmento_e:inst7.De
+S0 => segmento_f:inst8.Df
+S0 => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|sipo-piso-shift-registers|conversor:con0|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst
+Out <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+D7 => registrador8bits:inst16.D7
+D6 => registrador8bits:inst16.D6
+D5 => registrador8bits:inst16.D5
+D4 => registrador8bits:inst16.D4
+D3 => registrador8bits:inst16.D3
+D2 => registrador8bits:inst16.D2
+D1 => registrador8bits:inst16.D1
+D0 => registrador8bits:inst16.D0
+CLK => inst22.IN0
+CLK => MUX:M6.SHIFT
+CLK => MUX:M5.SHIFT
+CLK => MUX:M4.SHIFT
+CLK => MUX:M3.SHIFT
+CLK => MUX:M2.SHIFT
+CLK => MUX:M1.SHIFT
+CLK => MUX:M0.SHIFT
+CLK => inst19.IN0
+SHIFT => inst19.IN1
+H0 <= registrador8bits:inst16.R0
+H7 <= registrador8bits:inst16.R7
+H6 <= registrador8bits:inst16.R6
+H5 <= registrador8bits:inst16.R5
+H4 <= registrador8bits:inst16.R4
+H3 <= registrador8bits:inst16.R3
+H2 <= registrador8bits:inst16.R2
+H1 <= registrador8bits:inst16.R1
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M6
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|registrador8bits:inst16
+R7 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+D7 => inst8.IN0
+D7 => inst6.IN1
+CLK => inst6.CLK
+CLK => inst.CLK
+CLK => inst1.CLK
+CLK => inst2.CLK
+CLK => inst3.CLK
+CLK => inst4.CLK
+CLK => inst5.CLK
+CLK => inst7.CLK
+R6 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+D6 => inst9.IN0
+D6 => inst.IN1
+R5 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+D5 => inst10.IN0
+D5 => inst1.IN1
+R4 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+D4 => inst11.IN0
+D4 => inst2.IN1
+R3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+D3 => inst12.IN0
+D3 => inst3.IN1
+R2 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+D2 => inst13.IN0
+D2 => inst4.IN1
+R1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+D1 => inst14.IN0
+D1 => inst5.IN1
+R0 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+D0 => inst15.IN0
+D0 => inst7.IN1
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M5
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M4
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M3
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M2
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M1
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|PISOregister:inst|MUX:M0
+D <= orm.DB_MAX_OUTPUT_PORT_TYPE
+SHIFT => and1.IN0
+SHIFT => notm.IN0
+Q => and1.IN1
+In => and0.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1
+a-segment <= segmento_a:inst.seg-a
+S3 => segmento_a:inst.Aa
+S3 => segmento_b:inst2.Ab
+S3 => segmento_c:inst4.Ac
+S3 => segmento_d:inst5.Ad
+S3 => segmento_e:inst7.Ae
+S3 => segmento_f:inst8.Af
+S3 => segmento_g:inst9.Ag
+S2 => segmento_a:inst.Ba
+S2 => segmento_b:inst2.Bb
+S2 => segmento_c:inst4.Bc
+S2 => segmento_d:inst5.Bd
+S2 => segmento_e:inst7.Be
+S2 => segmento_f:inst8.Bf
+S2 => segmento_g:inst9.Bg
+S1 => segmento_a:inst.Ca
+S1 => segmento_b:inst2.Cb
+S1 => segmento_c:inst4.Cc
+S1 => segmento_d:inst5.Cd
+S1 => segmento_e:inst7.Ce
+S1 => segmento_f:inst8.Cf
+S1 => segmento_g:inst9.Cg
+S0 => segmento_a:inst.Da
+S0 => segmento_b:inst2.Db
+S0 => segmento_c:inst4.Dc
+S0 => segmento_d:inst5.Dd
+S0 => segmento_e:inst7.De
+S0 => segmento_f:inst8.Df
+S0 => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|sipo-piso-shift-registers|conversor:con1|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4
+a-segment <= segmento_a:inst.seg-a
+S3 => segmento_a:inst.Aa
+S3 => segmento_b:inst2.Ab
+S3 => segmento_c:inst4.Ac
+S3 => segmento_d:inst5.Ad
+S3 => segmento_e:inst7.Ae
+S3 => segmento_f:inst8.Af
+S3 => segmento_g:inst9.Ag
+S2 => segmento_a:inst.Ba
+S2 => segmento_b:inst2.Bb
+S2 => segmento_c:inst4.Bc
+S2 => segmento_d:inst5.Bd
+S2 => segmento_e:inst7.Be
+S2 => segmento_f:inst8.Bf
+S2 => segmento_g:inst9.Bg
+S1 => segmento_a:inst.Ca
+S1 => segmento_b:inst2.Cb
+S1 => segmento_c:inst4.Cc
+S1 => segmento_d:inst5.Cd
+S1 => segmento_e:inst7.Ce
+S1 => segmento_f:inst8.Cf
+S1 => segmento_g:inst9.Cg
+S0 => segmento_a:inst.Da
+S0 => segmento_b:inst2.Db
+S0 => segmento_c:inst4.Dc
+S0 => segmento_d:inst5.Dd
+S0 => segmento_e:inst7.De
+S0 => segmento_f:inst8.Df
+S0 => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|sipo-piso-shift-registers|conversor:con4|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
+|sipo-piso-shift-registers|SIPOregister:inst13
+O0 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+D => inst9.IN0
+D => inst3.IN1
+CLK => inst3.CLK
+CLK => inst2.CLK
+CLK => inst.CLK
+CLK => inst4.CLK
+CLK => inst5.CLK
+CLK => inst6.CLK
+CLK => inst7.CLK
+CLK => inst8.CLK
+O1 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+O2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+O3 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+O4 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+O5 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+O6 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+O7 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo-piso-shift-registers|conversor:con5
+a-segment <= segmento_a:inst.seg-a
+S3 => segmento_a:inst.Aa
+S3 => segmento_b:inst2.Ab
+S3 => segmento_c:inst4.Ac
+S3 => segmento_d:inst5.Ad
+S3 => segmento_e:inst7.Ae
+S3 => segmento_f:inst8.Af
+S3 => segmento_g:inst9.Ag
+S2 => segmento_a:inst.Ba
+S2 => segmento_b:inst2.Bb
+S2 => segmento_c:inst4.Bc
+S2 => segmento_d:inst5.Bd
+S2 => segmento_e:inst7.Be
+S2 => segmento_f:inst8.Bf
+S2 => segmento_g:inst9.Bg
+S1 => segmento_a:inst.Ca
+S1 => segmento_b:inst2.Cb
+S1 => segmento_c:inst4.Cc
+S1 => segmento_d:inst5.Cd
+S1 => segmento_e:inst7.Ce
+S1 => segmento_f:inst8.Cf
+S1 => segmento_g:inst9.Cg
+S0 => segmento_a:inst.Da
+S0 => segmento_b:inst2.Db
+S0 => segmento_c:inst4.Dc
+S0 => segmento_d:inst5.Dd
+S0 => segmento_e:inst7.De
+S0 => segmento_f:inst8.Df
+S0 => segmento_g:inst9.Dg
+b-segment <= segmento_b:inst2.seg-b
+c-segment <= segmento_c:inst4.seg-c
+d-segment <= segmento_d:inst5.seg-d
+e-segment <= segmento_e:inst7.seg-e
+f-segment <= segmento_f:inst8.seg-f
+g-segment <= segmento_g:inst9.seg-g
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_a:inst
+seg-a <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Aa => inst6.IN0
+Aa => inst4.IN0
+Aa => inst5.IN0
+Ba => inst8.IN0
+Ba => inst4.IN1
+Ba => inst3.IN1
+Ca => inst9.IN0
+Ca => inst5.IN2
+Da => inst2.IN3
+Da => inst4.IN3
+Da => inst5.IN3
+Da => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_b:inst2
+seg-b <= instw.DB_MAX_OUTPUT_PORT_TYPE
+Ab => inst6.IN0
+Ab => inst1ffvvv.IN0
+Ab => inst3rrrr.IN0
+Bb => asdfasdf.IN1
+Bb => inst0g.IN0
+Bb => inst3rrrr.IN1
+Cb => inst9.IN0
+Cb => inst1ffvvv.IN1
+Cb => inst0g.IN1
+Db => asdfasdf.IN3
+Db => inst1ffvvv.IN2
+Db => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_c:inst4
+seg-c <= instew.DB_MAX_OUTPUT_PORT_TYPE
+Ac => inst3t.IN0
+Ac => instr.IN0
+Ac => inst6.IN0
+Bc => inst3t.IN1
+Bc => instr.IN1
+Bc => inst8.IN0
+Cc => inst11.IN0
+Cc => instr.IN2
+Cc => inst2p.IN2
+Dc => inst9.IN0
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_d:inst5
+seg-d <= instfh.DB_MAX_OUTPUT_PORT_TYPE
+Ad => inst6.IN0
+Ad => inst5tt.IN0
+Bd => inst8.IN0
+Bd => inst1t.IN0
+Bd => inst3.IN1
+Cd => inst9.IN0
+Cd => inst1t.IN1
+Cd => inst5tt.IN2
+Dd => inst2.IN3
+Dd => inst1t.IN2
+Dd => inst10.IN0
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_e:inst7
+seg-e <= instwertu.DB_MAX_OUTPUT_PORT_TYPE
+Ae => inst3lp.IN0
+Ae => inst6g.IN0
+Be => instwert.IN0
+Be => inst2opj.IN1
+Ce => inst95g.IN0
+De => inst3lp.IN3
+De => inst2gfs.IN1
+De => instgr5.IN0
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_f:inst8
+seg-f <= inst4442.DB_MAX_OUTPUT_PORT_TYPE
+Af => inst2432.IN0
+Af => inst3420.IN0
+Bf => inst2432.IN1
+Bf => inst324.IN0
+Cf => inst984.IN0
+Cf => instq14.IN2
+Cf => instq12.IN1
+Df => inst2432.IN3
+Df => instq12.IN2
+Df => inst52f.IN2
+
+
+|sipo-piso-shift-registers|conversor:con5|segmento_g:inst9
+seg-g <= instytrdc.DB_MAX_OUTPUT_PORT_TYPE
+Ag => inst6tyfghm.IN0
+Ag => inst4sdfgj.IN0
+Bg => inst3fbm.IN1
+Bg => inst4sdfgj.IN1
+Bg => inst8retdhfgbv.IN0
+Cg => inst3fbm.IN2
+Cg => inst9sgdf.IN0
+Dg => inst3fbm.IN3
+Dg => instsrt.IN0
+
+
